@@ -1,0 +1,13 @@
+<h1>Features list</h1>
+
+<ul>
+  <% @features.each do |feature| %>
+    <li>
+      name: <%= link_to feature.name, feature_path(feature)  %> - 
+      description: <%= feature.description  %> - 
+      product assignee: <%= feature.user.email %> 
+    </li>
+   <% end %>
+
+   <%= link_to "Add a feature", new_feature_path  %>
+</ul>

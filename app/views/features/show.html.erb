@@ -1,0 +1,19 @@
+<h2><%= @feature.name %> </h2>
+
+<p>description: <%= @feature.description %></p>
+
+<p>estimated delivery: 
+  <%= if @feature.delivery.blank?
+     "not specified"
+     else @feature.delivery 
+  end %> 
+</p>
+
+<p>product assignee: <%= @feature.user.email  %></p>
+
+<%= link_to "modifier la feature", edit_feature_path(@feature)  %>
+<p>
+<%= link_to "Supprimer la feature", feature_path(@feature), method: :delete, data: {confirm: "Are you sure?"}  %>
+</p>
+<h4><%= link_to "Retour à la liste des features", features_path  %></h4>
+
