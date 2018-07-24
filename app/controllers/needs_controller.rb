@@ -3,22 +3,14 @@ class NeedsController < ApplicationController
   before_action :set_feature
   before_action :set_need, only: [:edit, :update, :destroy]
 
-  def index
-    @needs = @feature.needs
-  end
-
-  def new
-    @need = Need.new
-  end
-
   def create
     @need = Need.new(need_params)
     @need.user = current_user
     @need.feature = @feature 
     if @need.save
-      redirect_to feature_needs_path
+      redirect_to feature_path(@feature)
     else
-      render 'new'
+      redirect_to feature_path(@feature)
     end
   end
 

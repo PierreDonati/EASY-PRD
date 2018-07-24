@@ -1,7 +1,0 @@
-<h4>Create a need for <%= @feature.name %></h4>
-
-<%= form_for [@feature, @need] do |f| %>
-  <%= f.label :description  %>
-  <%= f.text_field :description  %>
-  <%= f.submit "create a need"  %>
-<% end %>

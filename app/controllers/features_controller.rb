@@ -7,6 +7,8 @@ class FeaturesController < ApplicationController
   end
 
   def show
+    @needs = @feature.needs
+    @need = Need.new
   end
 
   def new
