@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :features do 
-    resources :needs
+    resources :needs, only: [:create, :edit, :update, :destroy]
   end  
 
 end
