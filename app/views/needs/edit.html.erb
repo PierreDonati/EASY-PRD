@@ -1,0 +1,8 @@
+<h5>Update need</h5>
+
+<%= form_for [@feature, @need] do |f|  %>
+  <%= f.label :description  %>
+  <%= f.text_field :description  %>
+  <%= f.submit "update the need" %>
+<% end %>
+
