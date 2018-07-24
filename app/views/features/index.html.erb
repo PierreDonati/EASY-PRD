@@ -3,9 +3,13 @@
 <ul>
   <% @features.each do |feature| %>
     <li>
-      name: <%= link_to feature.name, feature_path(feature)  %> - 
-      description: <%= feature.description  %> - 
-      product assignee: <%= feature.user.email %> 
+      <p>
+        <%= link_to feature.name, feature_path(feature)  %>
+        <br> 
+        description: <%= feature.description  %>
+        <br> 
+        product assignee: <%= feature.user.email %>
+      </p>
     </li>
    <% end %>
 

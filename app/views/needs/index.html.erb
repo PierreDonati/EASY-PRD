@@ -1,0 +1,13 @@
+<h4>Needs for <%= @feature.name  %></h4>
+
+<ul>
+  <% @needs.each do |need| %>
+    <li>
+      <p>
+        <%= need.description  %>
+        <br>
+        Auteur: <%= need.user.email %>
+      </p>
+    </li>
+  <% end %>
+</ul>
