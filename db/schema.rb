@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_24_102311) do
+ActiveRecord::Schema.define(version: 2018_07_24_140011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2018_07_24_102311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_features_on_user_id"
+  end
+
+  create_table "needs", force: :cascade do |t|
+    t.text "description"
+    t.bigint "user_id"
+    t.bigint "feature_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feature_id"], name: "index_needs_on_feature_id"
+    t.index ["user_id"], name: "index_needs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +53,6 @@ ActiveRecord::Schema.define(version: 2018_07_24_102311) do
   end
 
   add_foreign_key "features", "users"
+  add_foreign_key "needs", "features"
+  add_foreign_key "needs", "users"
 end
