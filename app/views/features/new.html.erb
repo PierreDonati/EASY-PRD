@@ -1,9 +1,11 @@
-<%= form_for(@feature) do |f| %>
-  <%= f.label :name  %>
-  <%= f.text_field :name  %>
-  <%= f.label :description  %>
-  <%= f.text_field :description  %>
-  <%= f.label :delivery  %>
-  <%= f.text_field :delivery %>
-  <%= f.submit "add a feature" %>
-<% end %>
+<div class="container">
+  <%= form_for(@feature) do |f| %>
+    <%= f.label :name  %>
+    <%= f.text_field :name  %>
+    <%= f.label :description  %>
+    <%= f.text_field :description  %>
+    <%= f.label :delivery  %>
+    <%= f.text_field :delivery %>
+    <%= f.submit "Add a feature", class: "button-blue" %>
+  <% end %>
+</div>

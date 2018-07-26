@@ -1,0 +1,35 @@
+.button-blue {
+  background-color: #0060ca;
+  color: white;
+  border-radius: 40px;
+  font-weight: lighter;
+  padding: 12px 17px; 
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid #0060ca;
+  opacity: 0.9
+}
+
+.button-blue:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: white
+}
+
+.button-red {
+  background-color: #dd0a35;
+  color: white;
+  border-radius: 40px;
+  font-weight: lighter;
+  padding: 12px 17px; 
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid #dd0a35;
+  opacity: 0.9
+}
+
+.button-red:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: white
+}
