@@ -1,41 +1,44 @@
-<h2><%= @feature.name %> </h2>
+<div class="container">
+  <h2><%= @feature.name %> </h2>
 
-<p>description: <%= @feature.description %></p>
+  <p>description: <%= @feature.description %></p>
 
-<p>estimated delivery: 
-  <%= if @feature.delivery.blank?
-     "not specified"
-     else @feature.delivery 
-  end %> 
-</p>
+  <p>estimated delivery: 
+    <%= if @feature.delivery.blank?
+       "not specified"
+       else @feature.delivery 
+    end %> 
+  </p>
 
-<p>product assignee: <%= @feature.user.email  %></p>
+  <p>product assignee: <%= @feature.user.email  %></p>
 
-<%= link_to "modifier la feature", edit_feature_path(@feature)  %>
-<p>
-<%= link_to "Supprimer la feature", feature_path(@feature), method: :delete, data: {confirm: "Are you sure?"}  %>
-</p>
-<h4><%= link_to "Retour à la liste des features", features_path  %></h4>
+  <%= link_to "modifier la feature", edit_feature_path(@feature)  %>
+  <p><br></p>
+  <p>
+  <%= link_to "Supprimer la feature", feature_path(@feature), method: :delete, data: {confirm: "Are you sure?"}, class: "button-red"  %>
+  </p>
+  <p><%= link_to "Retour à la liste des features", features_path  %></p>
 
-<h4>Needs list for <%= @feature.name  %></h4>
+  <h4>Needs list for <%= @feature.name  %></h4>
 
-<ul>
-  <% @needs.each do |need| %>
-  <li>
-    <p>
-      <%= need.description  %>
-      <br>
-      <%= need.user.email  %>
-    </p>
-  </li>
+  <ul>
+    <% @needs.each do |need| %>
+    <li>
+      <p>
+        <%= need.description  %>
+        <br>
+        <%= need.user.email  %>
+      </p>
+    </li>
+    <% end %>
+  </ul>
+
+  <h4>Create a need for <%= @feature.name %></h4>
+
+  <%= form_for [@feature, @need] do |f| %>
+    <%= f.label :description  %>
+    <%= f.text_field :description  %>
+    <%= f.submit "create a need"  %>
   <% end %>
-</ul>
-
-<h4>Create a need for <%= @feature.name %></h4>
-
-<%= form_for [@feature, @need] do |f| %>
-  <%= f.label :description  %>
-  <%= f.text_field :description  %>
-  <%= f.submit "create a need"  %>
-<% end %>
+</div>
 

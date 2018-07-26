@@ -1,17 +1,19 @@
-<h1>Features list</h1>
+<div class="container">
+  <h1>Features list</h1>
 
-<ul>
-  <% @features.each do |feature| %>
-    <li>
-      <p>
-        <%= link_to feature.name, feature_path(feature)  %>
-        <br> 
-        description: <%= feature.description  %>
-        <br> 
-        product assignee: <%= feature.user.email %>
-      </p>
-    </li>
-   <% end %>
+  <ul>
+    <% @features.each do |feature| %>
+      <li>
+        <p>
+          <%= link_to feature.name, feature_path(feature)  %>
+          <br> 
+          description: <%= feature.description  %>
+          <br> 
+          product assignee: <%= feature.user.email %>
+        </p>
+      </li>
+     <% end %>
 
-   <%= link_to "Add a feature", new_feature_path  %>
-</ul>
+     <%= link_to "Add a feature", new_feature_path, class: "button-blue"  %>
+  </ul>
+</div>
