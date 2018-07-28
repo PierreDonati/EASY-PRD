@@ -7,8 +7,10 @@
 <div class="container">
 
   <h4> <%= @feature.name %> 
-    <%= link_to edit_feature_path(@feature) do  %>
-      <i class="fas fa-pen"></i>
+    <% if current_user == @feature.user %>
+      <%= link_to edit_feature_path(@feature) do  %>
+        <i class="fas fa-pen"></i>
+      <% end %>
     <% end %>
   </h4> 
 
@@ -21,11 +23,13 @@
     end %> 
   </p>
 
-  <p>product assignee: <%= @feature.user.email  %></p>
+  <p>product assignee: <%= @feature.user.name  %></p>
 
   <p><br></p>
   <p>
-  <%= link_to "Delete feature", feature_path(@feature), method: :delete, data: {confirm: "Are you sure?"}, class: "button-red"  %>
+    <% if current_user == @feature.user %>
+      <%= link_to "Delete feature", feature_path(@feature), method: :delete, data: {confirm: "Are you sure?"}, class: "button-red"  %>
+    <% end %>
   </p>
 
   <h4>Needs list for <%= @feature.name  %></h4>
@@ -36,7 +40,7 @@
       <p>
         <%= need.description  %>
         <br>
-        <%= need.user.email  %>
+        <%= need.user.name  %>
       </p>
     </li>
     <% end %>
@@ -45,8 +49,7 @@
   <h4>Create a need for <%= @feature.name %></h4>
 
   <%= form_for [@feature, @need] do |f| %>
-    <%= f.label :description  %>
-    <%= f.text_field :description  %>
+    <%= f.text_field :description, placeholder: "Add a description"  %>
     <%= f.submit "Add a need", class: "button-blue"  %>
   <% end %>
 </div>
