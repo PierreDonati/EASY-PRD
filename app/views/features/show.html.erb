@@ -41,6 +41,8 @@
         <%= need.description  %>
         <br>
         <%= need.user.name  %>
+        <br>
+        <%= link_to "Delete need", [@feature, need], method: :delete, data: {confirm: "Are you sure?"}  %>
       </p>
     </li>
     <% end %>

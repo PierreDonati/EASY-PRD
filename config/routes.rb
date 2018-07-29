@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :features do 
     resources :needs, only: [:create, :edit, :update, :destroy]
-  end  
+  end
+
+  # resources :needs, only: [:destroy]  
 
 end
