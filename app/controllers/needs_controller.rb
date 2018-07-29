@@ -27,8 +27,8 @@ class NeedsController < ApplicationController
   end
 
   def destroy
-    @need.delete
-    redirect_to feature_needs_path
+    @need.delete 
+    redirect_to feature_path(@feature)
   end
 
   private

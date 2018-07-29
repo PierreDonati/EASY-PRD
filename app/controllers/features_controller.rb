@@ -36,7 +36,7 @@ class FeaturesController < ApplicationController
   end
 
   def destroy
-    @feature.delete
+    @feature.destroy
     redirect_to features_path
   end
 
