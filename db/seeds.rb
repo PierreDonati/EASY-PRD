@@ -42,7 +42,7 @@ mobile_app = Feature.new(name: "sortir une nouvelle version de l'appli mobile", 
 mobile_app.save!
 
 
-need1_navbar = Need.new(description: "Besoin de voir plus les logos", user: ines, feature: navbar) 
+need1_navbar = Need.new(description: "Besoin de voir plus les logos", user: pierre, feature: navbar) 
 need1_navbar.save! 
 
 need2_navbar = Need.new(description: "Mettre le fond en plus sombre", user: jean, feature: navbar) 
@@ -51,7 +51,7 @@ need2_navbar.save!
 need3_navbar = Need.new(description: "Augmenter la hauteur, qui est trop petite pour l'instant", user: ines, feature: navbar) 
 need3_navbar.save! 
 
-need1_user_deletion = Need.new(description: "pourrait entrainer des problèmes de divulgation de data", user: jean, feature: user_deletion) 
+need1_user_deletion = Need.new(description: "pourrait entrainer des problèmes de divulgation de data", user: pierre, feature: user_deletion) 
 need1_user_deletion.save!
 
 need2_user_deletion = Need.new(description: "Si un user est créé par erreur on doit pouvoir le supprimer", user: ines, feature: user_deletion) 
@@ -60,7 +60,7 @@ need2_user_deletion.save!
 need3_user_deletion = Need.new(description: "Eviter d'avoir un back-office avec des A SUPPRIMER à côté de certains noms", user: jean, feature: user_deletion) 
 need3_user_deletion.save!
 
-need1_mobile_app = Need.new(description: "Besoin de pouvoir appairer via le mobile, demandé par client Dupont", user: ines, feature: mobile_app) 
+need1_mobile_app = Need.new(description: "Besoin de pouvoir appairer via le mobile, demandé par client Dupont", user: pierre, feature: mobile_app) 
 need1_mobile_app.save! 
 
 need2_mobile_app = Need.new(description: "Les utilisateurs ont du mal à savoir comment se déconnecter de l'app, chemin trop complexe", user: jean, feature: mobile_app) 

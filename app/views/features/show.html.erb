@@ -42,7 +42,9 @@
         <br>
         <%= need.user.name  %>
         <br>
-        <%= link_to "Delete need", [@feature, need], method: :delete, data: {confirm: "Are you sure?"}  %>
+          <% if current_user == need.user %>
+            <%= link_to "Delete need", [@feature, need], method: :delete, data: {confirm: "Are you sure?"}  %>
+          <% end %>
       </p>
     </li>
     <% end %>
